@@ -51,9 +51,22 @@ export const config: WebdriverIO.Config = {
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
     // https://saucelabs.com/platform/platform-configurator
     //
-    capabilities: [{
-        browserName: 'chrome'
-    }],
+    capabilities: [
+        // {
+        //     browserName: 'chrome'
+        // },
+        {
+            platformName: 'iOS',
+            'appium:deviceName': 'iPhone 16',
+            'appium:platformVersion': '18.4',
+            'appium:automationName': 'XCUITest',
+            'appium:bundleId': 'com.apple.Preferences'
+        }
+    ],
+    services: ['appium'],
+    hostname: 'localhost',
+    port: 4723,
+    path: '/',
 
     //
     // ===================
