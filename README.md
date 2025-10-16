@@ -23,3 +23,5 @@ npm init wdio@latest .
 ✔ Would you like to include Visual Testing to your setup? For more information see https://webdriver.io/docs/visual-testing! Yes
 ✔ Do you want to add a service to your test setup? visual
 ✔ Do you want me to run `npm install` Yes
+
+.
