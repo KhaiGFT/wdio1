@@ -1,0 +1,69 @@
+# ===============================
+# Node.js & WebdriverIO Ignore
+# ===============================
+
+# Node dependencies
+node_modules/
+package-lock.json
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Build and cache
+dist/
+build/
+.cache/
+.temp/
+tmp/
+out/
+coverage/
+
+# IDE / Editor configs
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+*.log
+
+# OS-specific
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# WebdriverIO specific
+.allure-results/
+.allure-report/
+reports/
+screenshots/
+wdio.log
+logs/
+errorShots/
+
+# Test results & artifacts
+junit-results.xml
+test-results/
+report/
+allure-report/
+
+# Compiled TypeScript (if used)
+*.tsbuildinfo
+
+# Optional: ignore videos/screenshots from mobile automation
+videos/
+artifacts/
+
+# Local app binaries or drivers
+drivers/
+appium.log
+*.apk
+*.ipa
+
+# Local configuration overrides
+wdio.local.conf.js
