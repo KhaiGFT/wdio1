@@ -51,6 +51,7 @@ junit-results.xml
 test-results/
 report/
 allure-report/
+allure-results/
 
 # Compiled TypeScript (if used)
 *.tsbuildinfo
