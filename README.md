@@ -9,10 +9,12 @@
 ## 🚀 Setup Instructions
 
 ### Initialize Project
+1 - Clone source code at this repo
+2 - Install dependencies
 ```bash
-npm init wdio@latest .
+npm install
 ```
-
+3 - Without error, try a commnand for trigger test at Run Tests section.
 ---
 
 ## ⚙️ WDIO Configuration Wizard
@@ -74,10 +76,26 @@ wdio1/
 
 ## ▶️ Run Tests
 
+1 - Run test on iOS application
 ```bash
-npx wdio run wdio.conf.ts
+npm run ios.app -- --spec=test/specs/ios.sample.e2e.ts
 ```
-
+2 - Run test on desktop web
+```bash
+npm run browser -- --spec=test/specs/web.sample.e2e.ts
+```
+3 - Run test on desktop web + iOS app
+```bash
+npm run combine -- --spec=test/specs/combine.sample.e2e.ts
+```
+4 - Generate Allure Report
+```bash
+npm run allure-report
+```
+5 - Open Appium inspector
+```bash
+npm run appium-inspector
+```
 ---
 
 ## 📸 Visual Testing

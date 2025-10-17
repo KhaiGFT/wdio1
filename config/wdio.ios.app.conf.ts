@@ -16,9 +16,8 @@ export const config: WebdriverIO.Config = {
     // ============
     // For all capabilities please check
     // http://appium.io/docs/en/writing-running-appium/caps/#general-capabilities
-    capabilities:{
-        mobile: {
-            capabilities: {
+    capabilities:[
+        {
                 platformName: "iOS",
                 "wdio:maxInstances": 1,
                 // For W3C the appium capabilities need to have an extension prefix
@@ -43,7 +42,7 @@ export const config: WebdriverIO.Config = {
                 "appium:newCommandTimeout": 240,
                 // This is needed to wait for the webview context to become available
                 "appium:webviewConnectTimeout": 5000,
+                "appium:noReset":true
             }
-        }
-    }
+    ]
 };
