@@ -13,7 +13,7 @@ class DropDownPage extends Page {
         return getDeviceFromCapabilities('browser')
     }
 
-    public get dropdownContainner () {
+    public get dropdownContainer (){
         return this.device.$('#dropdown');
     }
 
@@ -22,7 +22,11 @@ class DropDownPage extends Page {
      * e.g. to login using username and password
      */
     public async selectValue (value: string) {
-        await this.dropdownContainner.selectByVisibleText(value);
+        await this.dropdownContainer.selectByVisibleText(value);
+    }
+
+    public get selectedOption(){
+        return this.dropdownContainer.$('option:checked')
     }
 
     /**
