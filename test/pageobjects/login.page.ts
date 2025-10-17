@@ -1,5 +1,6 @@
 import { $ } from '@wdio/globals'
 import Page from './page.js';
+import { getDeviceFromCapabilities } from '../helpers/utils.ts'
 
 /**
  * sub page containing specific selectors and methods for a specific page
@@ -8,16 +9,20 @@ class LoginPage extends Page {
     /**
      * define selectors using getter methods
      */
+    private get device() {
+        return getDeviceFromCapabilities('browser')
+    }
+
     public get inputUsername () {
-        return $('#username');
+        return this.device.$('#username');
     }
 
     public get inputPassword () {
-        return $('#password');
+        return this.device.$('#password');
     }
 
     public get btnSubmit () {
-        return $('button[type="submit"]');
+        return this.device.$('button[type="submit"]');
     }
 
     /**

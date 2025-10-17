@@ -1,20 +1,26 @@
+import TabBar from '../screenobjects/components/TabBar.ts';
+import LoginScreen from '../screenobjects/LoginScreen.ts';
+import NativeAlert from '../screenobjects/components/NativeAlert.ts';
 import { expect } from '@wdio/globals'
 
-describe('iOS Settings App Test', () => {
+describe('WebdriverIO and Appium, when interacting with a login form,', () => {
+    beforeEach(async () => {
+        await TabBar.waitForTabBarShown();
+        await TabBar.openLogin();
+        await LoginScreen.waitForIsShown(true);
+    });
 
-  it('should open Settings > General > verify About exists', async () => {
-    // console.log('📱 Launching Settings app...')
-    // await driver.execute('mobile: launchApp', { bundleId: 'com.apple.Preferences' })
+    it('should be able login successfully', async () => {
+        // Always make sure you are on the right tab
+        await LoginScreen.tapOnLoginContainerButton();
+        // Submit the data
+        await LoginScreen.submitLoginForm({ username: 'hgvuhieu@gmail.com', password: 'Hie_12345!' });
+        // Wait for the alert and validate it
+        await NativeAlert.waitForIsShown();
+        await expect(await NativeAlert.text()).toContain('Success');
 
-    const general = await $('~General')
-    await expect(general).toBeDisplayed()
-    console.log('✅ General option is visible.')
-
-    await general.click()
-
-    const about = await $('~About')
-    await expect(about).toBeDisplayed()
-    console.log('✅ About option is visible inside General.')
-  })
-
+        // Close the alert
+        await NativeAlert.topOnButtonWithText('OK');
+        await NativeAlert.waitForIsShown(false);
+    });
 })
