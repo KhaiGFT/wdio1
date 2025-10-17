@@ -69,7 +69,7 @@ wdio1/
 - ✅ **Page Object pattern**  
 - ✅ **Visual Testing** integration  
 - ✅ **Spec reporter** for clean console output  
-
+a
 ---
 
 ## ▶️ Run Tests
