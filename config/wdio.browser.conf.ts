@@ -7,14 +7,13 @@ export const config: WebdriverIO.Config = {
     // Specs
     // ============
     specs: ["../test/specs/**/test.**.ts"],
-    capabilities: {
-            browser: {
-                capabilities: {
+    capabilities: [
+
+                    {
                     browserName: 'chrome',
                     'wdio:devtoolsOptions': {
                     headless: false
-            }
-        }
-    }
-    }
+                    }
+                }       
+    ]
 };

@@ -112,8 +112,6 @@ export const config: Options.Testrunner = {
     // see also: https://webdriver.io/docs/dot-reporter
     reporters: ['spec',['allure', {
           outputDir: './test/reports/allure-results',
-          disableWebdriverStepsReporting: false,
-          disableWebdriverScreenshotsReporting: false,
       }]],
     // Options to be passed to Mocha.
     mochaOpts: {

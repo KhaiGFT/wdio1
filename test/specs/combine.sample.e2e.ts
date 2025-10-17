@@ -5,7 +5,7 @@ import FormScreen from "../screenobjects/FormsScreen.ts";
 import LoginPage from '../pageobjects/login.page.ts'
 import SecurePage from '../pageobjects/secure.page.ts'
 import DropdownPage from '../pageobjects/dropdown.page.ts';
-import { expect, driver } from '@wdio/globals'
+import { expect } from '@wdio/globals'
 
 
 describe('WEB LOGIN -> APP LOGIN -> WEB DROPDOWN -> APP OPEN FORM,', () => {
