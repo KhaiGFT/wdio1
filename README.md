@@ -70,8 +70,8 @@ wdio1/
 - ✅ **TypeScript** support  
 - ✅ **Page Object pattern**  
 - ✅ **Visual Testing** integration  
-- ✅ **Spec reporter** for clean console output  
-a
+- ✅ **Spec reporter** for clean console output
+
 ---
 
 ## ▶️ Run Tests
