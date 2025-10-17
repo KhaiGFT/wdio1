@@ -1,4 +1,4 @@
-import { getDeviceFromCapabilities } from '../../helpers/Utils'
+import { getDeviceFromCapabilities } from '../../helpers/utils.ts'
 
 const SELECTORS = {
     ANDROID: {
@@ -23,10 +23,15 @@ class NativeAlert {
             ? SELECTORS.ANDROID.ALERT_TITLE
             : SELECTORS.IOS.ALERT
 
-        return emulator.$(selector).waitForExist({
+        // return emulator.$(selector).waitForExist({
+        //     timeout: 11000,
+        //     reverse: !isShown,
+        // })
+
+        await emulator.$(selector).waitForExist({
             timeout: 11000,
             reverse: !isShown,
-        })
+        });
     }
 
     /**

@@ -30,7 +30,7 @@ export const config: WebdriverIO.MultiremoteConfig = {
             "appium:platformVersion": "18.4",
             "appium:orientation": "PORTRAIT",
             "appium:automationName": "XCUITest",
-            "appium:noReset": true,
+            "appium:noReset": false,
             // The path to the app
             "appium:app": join(
                 process.cwd(),
