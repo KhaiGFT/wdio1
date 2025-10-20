@@ -14,7 +14,7 @@ describe('Login form iOS', () => {
         // Always make sure you are on the right tab
         await LoginScreen.tapOnLoginContainerButton();
         // Submit the data
-        await LoginScreen.submitLoginForm({ username: 'hgvuhieu@gmail.com', password: 'Hie_12345!' });
+        await LoginScreen.submitLoginForm({ username: 'autoQA@gft.com', password: 'Test1234!' });
         // Wait for the alert and validate it
         await NativeAlert.waitForIsShown();
         await expect(await NativeAlert.text()).toContain('Success');

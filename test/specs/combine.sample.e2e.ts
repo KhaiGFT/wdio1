@@ -24,7 +24,7 @@ describe('Test compile login on web and app', () => {
         await TabBar.openLogin()
         await LoginScreen.waitForIsShown(true)
         await LoginScreen.tapOnLoginContainerButton()
-        await LoginScreen.submitLoginForm({ username: 'test@webdriver.io', password: 'Test1234!' })
+        await LoginScreen.submitLoginForm({ username: 'test@gft.com', password: 'Test1234!' })
         await NativeAlert.topOnButtonWithText('OK')
         await NativeAlert.waitForIsShown(false)
         allure.endStep();
