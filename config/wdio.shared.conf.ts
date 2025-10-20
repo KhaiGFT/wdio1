@@ -1,5 +1,5 @@
 import type { Options } from '@wdio/types';
-import { getDeviceFromCapabilities } from '../test/helpers/utils'
+const allure = require('@wdio/allure-reporter').default;
 
 /**
  * All not needed configurations, for this boilerplate, are removed.
@@ -111,7 +111,8 @@ export const config: Options.Testrunner = {
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter
     reporters: ['spec',['allure', {
-          outputDir: './test/reports/allure-results',
+          outputDir: './reports/allure-results',
+          disableWebdriverScreenshotsReporting: true,
       }]],
     // Options to be passed to Mocha.
     mochaOpts: {
@@ -136,10 +137,39 @@ export const config: Options.Testrunner = {
      * NOTE: No Hooks are used in this project, but feel free to add them if you need them.
      */
     afterTest: async function(test, context, { error, result, duration, passed, retries }) {
+        
+        try {
+            if (browser.isMultiremote && Array.isArray((browser as any).instances) && (browser as any).instances.length) {
+                for (const name of (browser as any).instances) {
+                    try {
+                        const inst = (typeof driver.getInstance === 'function') ? driver.getInstance(name) : undefined;
+                        if (!inst) continue;
+                        const shotBase64 = await inst.takeScreenshot();
+                        if (shotBase64) {
+                            const buf = Buffer.from(shotBase64, 'base64');
+                            allure.addAttachment(`${name} screenshot`, buf, 'image/png');
+                        }
+                    } catch (err) {
+                        console.warn(`Could not capture screenshot for instance ${name}`, err);
+                    }
+                }
+                return;
+            }
 
-        const mobileDriver = driver.getInstance('mobile')
-        const browserDriver = driver.getInstance('browser')
-        await mobileDriver.takeScreenshot();
-        await browserDriver.takeScreenshot();
-}
+            // Single session (mobile or browser)
+            try {
+                if (browser.isMobile) {
+                    const mobileScreenshot = await browser.takeScreenshot();
+                    allure.addAttachment('Mobile screenshot', Buffer.from(mobileScreenshot, 'base64'), 'image/png');
+                } else {
+                    const browserScreenshot = await browser.takeScreenshot();
+                    allure.addAttachment('Web browser screenshot', Buffer.from(browserScreenshot, 'base64'), 'image/png');
+                }
+            } catch (err) {
+                console.warn('Could not capture screenshot in afterTest', err);
+            }
+        } catch (err) {
+            console.warn('afterTest screenshot handler error', err);
+        }
+    }
 };

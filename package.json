@@ -19,6 +19,6 @@
     "ios.app": "wdio run config/wdio.ios.app.conf.ts",
     "lint": "eslint config tests",
     "appium:inspector": "bash scripts/start-appium-inspector.sh",
-    "allure-report": "node_modules/.bin/allure generate --clean ./test/reports/allure-results && allure open -p 5050"
+    "allure-report": "node_modules/.bin/allure generate --clean ./reports/allure-results && allure open -p 5050"
   }
 }

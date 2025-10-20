@@ -9,7 +9,7 @@ import { expect } from '@wdio/globals'
 import allure from '@wdio/allure-reporter';
 
 
-describe('Test compile login on web and app,', () => {
+describe('Test compile login on web and app', () => {
     it('Compile web and app tests', async () => {
         // Web login  
         allure.startStep('Veirfy login on web');

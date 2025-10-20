@@ -57,14 +57,14 @@ Build an **Automation Testing Framework** that can comprehensively test **Web De
   - test/screenobjects/*.ts — mobile ScreenObjects (LoginScreen, FormsScreen, TabBar, NativeAlert)
 
 - Reports:
-  - Allure raw results: ./test/reports/allure-results/
+  - Allure raw results: ./reports/allure-results/
   - Generated HTML report: ./allure-report/index.html
 
 ## 5. How it works (summary)
 - WDIO runner executes using one of the config files in config/.
 - For multiremote or multiple drivers, use getDeviceFromCapabilities (test/helpers/utils.ts) to obtain the correct instance (e.g., 'browser' or 'mobile').
 - PageObjects/ScreenObjects use the device instance passed to them.
-- Allure is configured in config/wdio.shared.conf.ts and stores results in ./test/reports/allure-results/.
+- Allure is configured in config/wdio.shared.conf.ts and stores results in ./reports/allure-results/.
 
 ## 6. Common commands (run from project root)
 - Run test on iOS application
@@ -75,3 +75,7 @@ Build an **Automation Testing Framework** that can comprehensively test **Web De
   - npm run combine -- --spec=test/specs/combine.sample.e2e.ts
 - Generate Allure Report
   - npm run allure-report
+
+-------
+
+
