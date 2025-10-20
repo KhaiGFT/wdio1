@@ -9,10 +9,10 @@ import { expect } from '@wdio/globals'
 import allure from '@wdio/allure-reporter';
 
 
-describe('WEB LOGIN -> APP LOGIN -> WEB DROPDOWN -> APP OPEN FORM,', () => {
+describe('Test compile login on web and app,', () => {
     it('Compile web and app tests', async () => {
         // Web login  
-        allure.startStep('WEB LOGIN');
+        allure.startStep('Veirfy login on web');
         await LoginPage.open();
         await LoginPage.login('tomsmith', 'SuperSecretPassword!');
         await expect(SecurePage.flashAlert).toBeExisting();
@@ -20,7 +20,7 @@ describe('WEB LOGIN -> APP LOGIN -> WEB DROPDOWN -> APP OPEN FORM,', () => {
         allure.endStep();
 
         // App login    
-        allure.startStep('APP LOGIN');
+        allure.startStep('Veirfy login on app');
         await TabBar.openLogin()
         await LoginScreen.waitForIsShown(true)
         await LoginScreen.tapOnLoginContainerButton()
@@ -30,14 +30,14 @@ describe('WEB LOGIN -> APP LOGIN -> WEB DROPDOWN -> APP OPEN FORM,', () => {
         allure.endStep();
 
         // Web dropdown
-        allure.startStep('WEB DROPDOWN');
+        allure.startStep('Select a value on web dropdown');
         await DropdownPage.open()
         await DropdownPage.selectValue('Option 1')
         await expect(DropdownPage.selectedOption).toHaveText('Option 1');
         allure.endStep();
 
         // App open Form
-        allure.startStep('APP OPEN FORM');
+        allure.startStep('Verfy input on app form');
         await TabBar.openForms()
         await FormScreen.waitForIsShown(true);
         const text = "Hello, this is a demo app";

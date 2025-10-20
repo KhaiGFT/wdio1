@@ -3,7 +3,7 @@ import LoginPage from '../pageobjects/login.page.ts'
 import SecurePage from '../pageobjects/secure.page.ts'
 
 
-describe('My Login application', () => {
+describe('Login form web', () => {
     it('should allow access with correct credentials',  async () => {
         await LoginPage.open()
         await LoginPage.login('tomsmith', 'SuperSecretPassword!')

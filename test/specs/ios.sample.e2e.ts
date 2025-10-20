@@ -3,7 +3,7 @@ import LoginScreen from '../screenobjects/LoginScreen.ts';
 import NativeAlert from '../screenobjects/components/NativeAlert.ts';
 import { expect } from '@wdio/globals'
 
-describe('WebdriverIO and Appium, when interacting with a login form,', () => {
+describe('Login form iOS,', () => {
     beforeEach(async () => {
         await TabBar.waitForTabBarShown();
         await TabBar.openLogin();
