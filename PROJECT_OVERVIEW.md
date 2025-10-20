@@ -67,20 +67,11 @@ Build an **Automation Testing Framework** that can comprehensively test **Web De
 - Allure is configured in config/wdio.shared.conf.ts and stores results in ./test/reports/allure-results/.
 
 ## 6. Common commands (run from project root)
-- Run web tests (Chrome)
-  - npm run browser
-  - or: npx wdio run config/wdio.browser.conf.ts
-
-- Run iOS native app tests
-  - npm run ios.app
-  - or: npx wdio run config/wdio.ios.app.conf.ts
-
-- Run multiremote (web + app)
-  - npm run combine
-  - or: npx wdio run config/wdio.combine.conf.ts
-
-- Generate & open Allure report
+- Run test on iOS application
+  - npm run ios.app -- --spec=test/specs/ios.sample.e2e.ts
+- Run test on desktop web
+  - npm run browser -- --spec=test/specs/web.sample.e2e.ts
+- Run test on desktop web + iOS app
+  - npm run combine -- --spec=test/specs/combine.sample.e2e.ts
+- Generate Allure Report
   - npm run allure-report
-  - Results: ./test/reports/allure-results/
-  - HTML: ./allure-report/index.html
-
