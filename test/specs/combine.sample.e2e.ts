@@ -33,14 +33,14 @@ describe('Test compile login on web and app', () => {
 
         // Web input text
         allure.startStep('On Web, input text = autoQA@gft.com');
-        await HomePage.inputTextForSampleInput('autoQA@gft.com')
-        await expect(HomePage.sampleInput).toHaveValue(
-            expect.stringContaining('autoQA@gft.com')
-        );
-        await HomePage.InputSpecialKey(Key.Enter)
-        await expect(HomePage.savedList).toHaveText(
-            expect.stringContaining('autoQA@gft.com')
-        );
+        const inputTextArray = ['autoQA@gft.com','test@gft.com','auto@gft.com','autoQA2026@gft.com']
+        for (const element of inputTextArray) {
+            await HomePage.inputTextForSampleInput(element)
+            await HomePage.saveButton.click()
+            await expect(HomePage.savedList).toHaveText(
+                expect.stringContaining(element)
+            );
+        }
         allure.endStep();
 
         // App open Form

@@ -26,6 +26,10 @@ class HomePage extends Page {
         return this.device.$('#savedList');
     }
 
+    public get saveButton (){
+        return this.device.$('#saveBtn');
+    }
+
     public async inputTextForSampleInput (inputText: string) {
         await this.sampleInput.setValue(inputText);
     }
