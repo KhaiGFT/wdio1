@@ -39,7 +39,7 @@ class LoginPage extends Page {
      * overwrite specific options to adapt it to page object
      */
     public open () {
-        return super.open('login');
+        return super.open('web_html/login.htm');
     }
 }
 

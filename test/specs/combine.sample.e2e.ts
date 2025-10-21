@@ -3,8 +3,7 @@ import LoginScreen from '../screenobjects/LoginScreen.ts';
 import NativeAlert from '../screenobjects/components/NativeAlert.ts';
 import FormScreen from "../screenobjects/FormsScreen.ts";
 import LoginPage from '../pageobjects/login.page.ts'
-import SecurePage from '../pageobjects/secure.page.ts'
-import DropdownPage from '../pageobjects/dropdown.page.ts';
+import HomePage from '../pageobjects/home.page.ts'
 import { expect } from '@wdio/globals'
 import allure from '@wdio/allure-reporter';
 
@@ -13,10 +12,11 @@ describe('Test compile login on web and app', () => {
     it('Compile web and app tests', async () => {
         // Web login  
         allure.startStep('Veirfy login on web');
-        await LoginPage.open();
-        await LoginPage.login('tomsmith', 'SuperSecretPassword!');
-        await expect(SecurePage.flashAlert).toBeExisting();
-        await expect(SecurePage.flashAlert).toHaveText(expect.stringContaining('You logged into a secure area!'));
+        await LoginPage.open()
+        await LoginPage.login('admin', 'admin')
+        await expect(HomePage.title).toBeExisting()
+        await expect(HomePage.title).toHaveText(
+            expect.stringContaining('Welcome Admin'))
         allure.endStep();
 
         // App login    
@@ -24,16 +24,15 @@ describe('Test compile login on web and app', () => {
         await TabBar.openLogin()
         await LoginScreen.waitForIsShown(true)
         await LoginScreen.tapOnLoginContainerButton()
-        await LoginScreen.submitLoginForm({ username: 'test@gft.com', password: 'Test1234!' })
+        await LoginScreen.submitLoginForm({ username: 'autoQA@gft.com', password: 'Test1234!' })
         await NativeAlert.topOnButtonWithText('OK')
         await NativeAlert.waitForIsShown(false)
         allure.endStep();
 
-        // Web dropdown
-        allure.startStep('Select a value on web dropdown');
-        await DropdownPage.open()
-        await DropdownPage.selectValue('Option 1')
-        await expect(DropdownPage.selectedOption).toHaveText('Option 1');
+        // Web input text
+        allure.startStep('On Web, input text = autoQA@gft.com');
+        await HomePage.inputTextForSampleInput('autoQA@gft.com')
+        await expect(HomePage.sampleInput).toHaveValue('autoQA@gft.com');
         allure.endStep();
 
         // App open Form
