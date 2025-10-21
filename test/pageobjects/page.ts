@@ -1,4 +1,3 @@
-import { browser, multiremotebrowser } from '@wdio/globals'
 import { getDeviceFromCapabilities } from '../helpers/utils.ts'
 
 /**
@@ -9,7 +8,11 @@ export default class Page {
     /**
      * Opens a sub page of the page
      */
-    async open (path: string):Promise<string> {
-        return getDeviceFromCapabilities('browser').url(`/${path}`)
+    async open (path: string) {
+        await getDeviceFromCapabilities('browser').url(`/${path}`)
+    }
+
+    async InputSpecialKey (specialKey: any) {
+        await getDeviceFromCapabilities('browser').keys(specialKey)
     }
 }

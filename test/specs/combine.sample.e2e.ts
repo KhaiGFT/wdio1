@@ -5,6 +5,7 @@ import FormScreen from "../screenobjects/FormsScreen.ts";
 import LoginPage from '../pageobjects/login.page.ts'
 import HomePage from '../pageobjects/home.page.ts'
 import { expect } from '@wdio/globals'
+import { Key } from 'webdriverio'
 import allure from '@wdio/allure-reporter';
 
 
@@ -16,7 +17,8 @@ describe('Test compile login on web and app', () => {
         await LoginPage.login('admin', 'admin')
         await expect(HomePage.title).toBeExisting()
         await expect(HomePage.title).toHaveText(
-            expect.stringContaining('Welcome Admin'))
+            expect.stringContaining('Welcome Admin')
+        );
         allure.endStep();
 
         // App login    
@@ -32,7 +34,13 @@ describe('Test compile login on web and app', () => {
         // Web input text
         allure.startStep('On Web, input text = autoQA@gft.com');
         await HomePage.inputTextForSampleInput('autoQA@gft.com')
-        await expect(HomePage.sampleInput).toHaveValue('autoQA@gft.com');
+        await expect(HomePage.sampleInput).toHaveValue(
+            expect.stringContaining('autoQA@gft.com')
+        );
+        await HomePage.InputSpecialKey(Key.Enter)
+        await expect(HomePage.savedList).toHaveText(
+            expect.stringContaining('autoQA@gft.com')
+        );
         allure.endStep();
 
         // App open Form

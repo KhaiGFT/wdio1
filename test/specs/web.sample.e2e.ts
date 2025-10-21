@@ -9,7 +9,8 @@ describe('Login form web', () => {
         await LoginPage.login('admin', 'admin')
         await expect(HomePage.title).toBeExisting()
         await expect(HomePage.title).toHaveText(
-            expect.stringContaining('Welcome Admin'))
+            expect.stringContaining('Welcome Admin')
+        );
     });
 })
 
