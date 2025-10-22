@@ -14,7 +14,7 @@ describe('Test compile login on web and app', () => {
         // Web login  
         allure.startStep('Veirfy login on web');
         await LoginPage.open()
-        await LoginPage.login('admin', 'admin')
+        await LoginPage.login('autoQAGFT', 'admin')
         await expect(HomePage.title).toBeExisting()
         await expect(HomePage.title).toHaveText(
             expect.stringContaining('Welcome Admin')
