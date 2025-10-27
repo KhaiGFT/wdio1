@@ -7,7 +7,7 @@ export const config: WebdriverIO.MultiremoteConfig = {
     // ============
     // Specs
     // ============
-    specs: ["../test/specs/**/test.**.ts"],
+    specs: ["../test/specs/**/*.ts"],
     capabilities: {
     browser: {
         capabilities: {

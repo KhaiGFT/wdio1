@@ -45,6 +45,11 @@ Combined test (example):
 npm run combine -- --spec=test/specs/combine.sample.e2e.ts
 ```
 
+Tags test (example):
+```bash
+npm run browser -- --mochaOpts.grep "@full"
+```
+
 Generate Allure report:
 ```bash
 npm run allure-report
