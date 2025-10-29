@@ -1,4 +1,4 @@
-# ✅ Feedback Responses for Client Presentation
+# ✅ Feedback Responses from Ter Pong in rehearsal meeting
 
 ## **1️⃣ How to capture the element locator?**
 We can capture element locators in multiple ways — no dependency on the developer team as long as each element has a unique attribute.
