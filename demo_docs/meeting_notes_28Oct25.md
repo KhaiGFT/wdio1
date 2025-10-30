@@ -54,10 +54,17 @@ Manual testing works fine for small projects, but as systems scale, re-running h
 
 | Task | Manual Effort | Automated Effort | Saving |
 |------|----------------|------------------|---------|
-| Regression (50 test cases) | ~2 days | ~1 hour | ~90% saved |
-| Cross-browser verification | ~1 day | ~20 min | ~85% saved |
+| Regression test execution (50 test cases) | ~12.5 hours | ~2.5 hour | ~80% saved |
+| Cross-browser test execution (execute 50 test cases on 2 browsers) | ~25 hours | ~5 hours | ~80% saved |  (But it's not required more effort on automation development)
+| Multiple-environments test execution (execute 50 test cases on SIT and UAT env) | 25 hours |  ~5 hour | ~80% saved |  (But it's not required more effort on automation development)
 
-> Automation lets testers focus on exploratory and high-value testing instead of repeating routine checks.
+The figure above is based on the following data
+  + The velocity of manual execution = 15 minutes/test cases
+  + Automation test instance = 5 instances/threads/runners/worker per execution time
+  + The velocity of automation execution = The velocity of manual execution (but in practice, automation execution is faster then manual execution on complicated test cases)
+  + The working time for automation execution = 24 hours > the working time of manual tester = 8 hours
+
+> Automation testing lets manual testers focus on exploratory and high-value testing instead of repeating routine checks.
 
 ---
 
