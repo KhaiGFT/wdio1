@@ -52,9 +52,9 @@ Manual testing works fine for small projects, but as systems scale, re-running h
 - For small projects → limited ROI initially.  
 - As features grow → automation greatly reduces regression time and catches side-effect issues earlier.
 
-| Task | Manual Effort | Automated Effort | Saving |
-|------|----------------|------------------|---------|
-| Regression test execution (50 test cases) | ~12.5 hours | ~2.5 hour | ~80% saved |
+| Task | Manual Effort | Automated Effort | Saving | Notes |
+|------|----------------|------------------|---------| --- |
+| Regression test execution (50 test cases) | ~12.5 hours | ~2.5 hour | ~80% saved | |
 | Cross-browser test execution (execute 50 test cases on 2 browsers) | ~25 hours | ~5 hours | ~80% saved |  (But it's not required more effort on automation development)
 | Multiple-environments test execution (execute 50 test cases on SIT and UAT env) | ~25 hours |  ~5 hour | ~80% saved |  (But it's not required more effort on automation development)
 
