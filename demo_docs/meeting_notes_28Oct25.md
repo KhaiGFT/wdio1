@@ -56,7 +56,7 @@ Manual testing works fine for small projects, but as systems scale, re-running h
 |------|----------------|------------------|---------|
 | Regression test execution (50 test cases) | ~12.5 hours | ~2.5 hour | ~80% saved |
 | Cross-browser test execution (execute 50 test cases on 2 browsers) | ~25 hours | ~5 hours | ~80% saved |  (But it's not required more effort on automation development)
-| Multiple-environments test execution (execute 50 test cases on SIT and UAT env) | 25 hours |  ~5 hour | ~80% saved |  (But it's not required more effort on automation development)
+| Multiple-environments test execution (execute 50 test cases on SIT and UAT env) | ~25 hours |  ~5 hour | ~80% saved |  (But it's not required more effort on automation development)
 
 The figure above is based on the following data
   + The velocity of manual execution = 15 minutes/test cases
