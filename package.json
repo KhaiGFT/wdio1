@@ -17,6 +17,7 @@
     "browser": "npm run clean-allure && wdio run config/wdio.browser.conf.ts",
     "combine": "npm run clean-allure && wdio run config/wdio.combine.conf.ts",
     "ios.app": "npm run clean-allure && wdio run config/wdio.ios.app.conf.ts",
+    "api": "npm run clean-allure && wdio run config/wdio.api.conf.ts",
     "lint": "eslint config tests",
     "appium:inspector": "bash scripts/start-appium-inspector.sh",
     "clean-allure": "rm -rf reports && rm -rf allure-report",

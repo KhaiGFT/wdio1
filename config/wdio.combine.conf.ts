@@ -24,10 +24,10 @@ export const config: WebdriverIO.MultiremoteConfig = {
 
             //
             // NOTE: Change this name according to the Simulator you have created on your local machine
-            "appium:deviceName": "iPhone 16",
+            "appium:deviceName": "Matthew Iphone",
             //
             // NOTE: Change this version according to the Simulator Version you have created on your local machine
-            "appium:platformVersion": "18.4",
+            "appium:platformVersion": "17.4",
             "appium:orientation": "PORTRAIT",
             "appium:automationName": "XCUITest",
             "appium:noReset": false,

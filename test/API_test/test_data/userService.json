@@ -1,0 +1,82 @@
+{
+    "createUserAPI":{
+        "configTemplate": {
+            "method": "post",
+            "url": "/api/user",
+            "headers": {
+                "Content-Type": "application/json",
+                "x-api-key": "reqres-free-v1"
+            },
+            "data": {
+                "name": "morpheus",
+                "job": "leader"
+            }
+        }
+    },
+    "getUserAPI":{
+        "configTemplate": {
+            "method": "get",
+            "url": "/api/user/{userID}",
+            "headers": {
+                "Content-Type": "application/json",
+                "x-api-key": "reqres-free-v1"
+            },
+            "data": {
+            }
+        },
+        "responseSchema":{
+            "data": {
+                "id": "number",
+                "name": "string",
+                "year": "number",
+                "color": "string",
+                "pantone_value": "string"
+            },
+            "support": {
+                "url": "string",
+                "text": "string"
+            },
+            "_meta": {
+                "powered_by": "string",
+                "upgrade_url": "string",
+                "docs_url": "string",
+                "template_gallery": "string",
+                "message": "string",
+                "features": "array",
+                "upgrade_cta": "string"
+            }
+            
+        }
+    },
+    "updateUserAPI":{
+        "configTemplate": {
+            "method": "put",
+            "url": "/api/user/{userID}",
+            "headers": {
+                "Content-Type": "application/json",
+                "x-api-key": "reqres-free-v1"
+            },
+            "data": {
+                "name": "morpheus",
+                "job": "leader"
+            }
+        }
+            
+    },
+    "deleteUserAPI":{
+        "configTemplate": {
+            "method": "delete",
+            "url": "/api/user/{userID}",
+            "headers": {
+                "Content-Type": "application/json",
+                "x-api-key": "reqres-free-v1"
+            },
+            "data": {
+            }
+        }
+            
+    }
+}
+
+
+    

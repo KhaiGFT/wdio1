@@ -1,5 +1,5 @@
 import type { Options } from '@wdio/types';
-const allure = require('@wdio/allure-reporter').default;
+import allure from '@wdio/allure-reporter';
 
 /**
  * All not needed configurations, for this boilerplate, are removed.

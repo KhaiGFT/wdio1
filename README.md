@@ -32,22 +32,32 @@ The repository defines npm scripts in package.json. Use these commands to run te
 
 Web test (example):
 ```bash
-npm run browser -- --spec=test/specs/web.sample.e2e.ts
+npm run browser -- --spec=test/UI_test/specs/web.sample.e2e.ts
 ```
 
 iOS App test (example):
 ```bash
-npm run ios.app -- --spec=test/specs/ios.sample.e2e.ts
+npm run ios.app -- --spec=test/UI_test/specs/ios.sample.e2e.ts
 ```
 
-Combined test (example):
+Combined UI test (example):
 ```bash
-npm run combine -- --spec=test/specs/combine.sample.e2e.ts
+npm run combine -- --spec=test/UI_test/specs/combine.sample.e2e.ts
+```
+
+API test (example):
+```bash
+npm run api
+```
+
+Combined UI and API test (example):
+```bash
+npm run combine -- --spec=test/UI_test/specs/combine3.sample.e2e.ts
 ```
 
 Tags test (example):
 ```bash
-npm run browser -- --mochaOpts.grep "@full"
+npm run api -- --mochaOpts.grep "@full"
 ```
 
 Generate Allure report:

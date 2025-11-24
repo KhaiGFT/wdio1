@@ -1,18 +1,22 @@
 import { config as baseConfig } from "./wdio.shared.conf.js";
 
+
 export const config: WebdriverIO.Config = {
     ...baseConfig,
 
     // ============
     // Specs
     // ============
-    specs: ["../test/specs/**/*.ts"],
+    specs: ["../test/API_test/specs/**/*.ts"],
+    suites:{
+        login: ["../test/API_test/specs/login.api.e2e.ts"],
+    },
     capabilities: [
 
                     {
                     browserName: 'chrome',
                     'goog:chromeOptions': {
-                        args: ['--disable-gpu'],
+                        args: ['--headless', '--disable-gpu'],
                     }
                 }       
     ]

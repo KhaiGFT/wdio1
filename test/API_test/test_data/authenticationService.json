@@ -1,0 +1,23 @@
+{
+    "loginAPI":{
+        "configTemplate": {
+            "method": "post",
+            "url": "/api/login",
+            "headers": {
+                "Content-Type": "application/json",
+                "x-api-key": "reqres-free-v1"
+            },
+            "data": {}
+        },
+        "testData":{
+            "validCredentials": {
+                "email": "eve.holt@reqres.in",
+                "password": "cityslicka"
+            },
+            "invalidCredentials": {
+                "email": "wronguser",
+                "password": "Wrong@1234"
+            }
+        }
+    }
+}
