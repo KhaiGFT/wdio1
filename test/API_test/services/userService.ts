@@ -1,7 +1,7 @@
 import Axios_API_clients from './API_clients';
 import allureReporter from '@wdio/allure-reporter';
 import { faker } from "@faker-js/faker";
-import { expectToMatchSchema } from "../utils/validateSchema";
+import { expectToMatchSchema } from "../helpers/validateSchema";
 
 class UserService extends Axios_API_clients {
 

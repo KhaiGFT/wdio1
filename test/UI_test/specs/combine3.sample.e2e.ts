@@ -7,7 +7,7 @@ import HomePage from '../pageobjects/home.page.ts'
 import { expect } from '@wdio/globals'
 import allure from '@wdio/allure-reporter';
 import UserService from '../../API_test/services/userService.ts';
-import { JSON_Reader } from '../../API_test/utils/jsonReader.ts';
+import { JSON_Reader } from '../../API_test/helpers/jsonReader.ts';
 import _ from 'lodash';
 
 

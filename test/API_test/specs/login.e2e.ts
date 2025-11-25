@@ -1,5 +1,5 @@
 import AuthenticationService from '../services/authenticationService';
-import { JSON_Reader } from '../utils/jsonReader';
+import { JSON_Reader } from '../helpers/jsonReader';
 import _ from 'lodash';
 
 describe('My Login API', () => {

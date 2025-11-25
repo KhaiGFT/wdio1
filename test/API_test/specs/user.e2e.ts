@@ -1,5 +1,5 @@
 import UserService from '../services/userService';
-import { JSON_Reader } from '../utils/jsonReader';
+import { JSON_Reader } from '../helpers/jsonReader';
 import _ from 'lodash';
 
 
